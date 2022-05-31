@@ -3,9 +3,32 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.Models", "TodoApp.Models\TodoApp.Models.csproj", "{37290EC6-7EDD-481F-BBF5-1BA900A48964}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User Interface", "User Interface", "{8BD370DE-54DC-41EB-9246-6DD547227868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.ConsoleApp", "Todo.ConsoleApp\Todo.ConsoleApp.csproj", "{8F86F8FF-E231-4AA0-9B27-085D293DEA62}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37290EC6-7EDD-481F-BBF5-1BA900A48964}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37290EC6-7EDD-481F-BBF5-1BA900A48964}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37290EC6-7EDD-481F-BBF5-1BA900A48964}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37290EC6-7EDD-481F-BBF5-1BA900A48964}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F86F8FF-E231-4AA0-9B27-085D293DEA62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F86F8FF-E231-4AA0-9B27-085D293DEA62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F86F8FF-E231-4AA0-9B27-085D293DEA62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F86F8FF-E231-4AA0-9B27-085D293DEA62}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8F86F8FF-E231-4AA0-9B27-085D293DEA62} = {8BD370DE-54DC-41EB-9246-6DD547227868}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9FD6884-2B3C-4F64-88D4-B4913F637BAC}
