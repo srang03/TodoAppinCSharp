@@ -15,11 +15,6 @@
         // Empty
     }
 
-    public class TodoRepositoryFile 
-    {
-
-    }
-
     public class TodoRepositorySqlServer
     {
 
