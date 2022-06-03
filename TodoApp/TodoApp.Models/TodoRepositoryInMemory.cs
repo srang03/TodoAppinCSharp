@@ -48,6 +48,11 @@ namespace TodoApp.Models
             return result;
         }
 
+        public string Test()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public bool UpdateTodo(TodoModel model)
         {
             

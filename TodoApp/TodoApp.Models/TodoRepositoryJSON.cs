@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,40 +10,25 @@ namespace TodoApp.Models
     /// <summary>
     /// 인-메모리 데이터베이스 사용 영역
     /// </summary>
-    public class TodoRepositoryFile : ITodoRepository<TodoModel>
+    public class TodoRepositoryJSON : ITodoRepository<TodoModel>
     {
         // [1] 인-메모리 데이터베이스 역할 (인-메모리 > 컬렉션)
         private static List<TodoModel> _todos = new List<TodoModel>();
-        private const string _filePath = "C:\\Users\\Ian\\Desktop\\ian\\C#\\TodoAppinCSharp\\TodoApp\\Todo.ConsoleApp\\Todo.txt";
+        private const string _filePath = "C:\\Users\\Ian\\Desktop\\ian\\C#\\TodoAppinCSharp\\TodoApp\\Todo.ConsoleApp\\Todo.json";
 
         // [2] 초기화 > Dummy 데이터 3개 출력
-        public TodoRepositoryFile(string filePath = _filePath)
+        public TodoRepositoryJSON(string filePath = _filePath)
         {
-            string[] todos = File.ReadAllLines(filePath, Encoding.Default);
-            foreach (string todo in todos)
-            {
-                string[] str = todo.Split(',');
-                _todos.Add(new TodoModel()
-                {
-                    Id = int.Parse(str[0]), Title = str[1], IsDone = bool.Parse(str[2])
-                });
-
-            }
-            Console.WriteLine("파일 생성 완료");
+            var todos = File.ReadAllText(filePath, Encoding.Default);
+            _todos = JsonConvert.DeserializeObject<List<TodoModel>>(todos);
         }
 
         public void AddTodo(TodoModel model)
         {
             model.Id = _todos.Max(t => t.Id) + 1;
-            model.IsDone = false;
            _todos.Add(model);
 
-            string data_all = File.ReadAllText(_filePath)+  $"{model.Id},{model.Title},{model.IsDone}";
-  
-            StreamWriter sw = new StreamWriter(_filePath);
-            sw.WriteLine(data_all);
-            sw.Close();
-            sw.Dispose();
+            ChangeFile();
         }
 
         public TodoModel BrowseDetail(int id)
@@ -66,13 +52,8 @@ namespace TodoApp.Models
 
         private void ChangeFile()
         {
-            StreamWriter sw = new StreamWriter(_filePath);
-
-            foreach (TodoModel todo in _todos)
-            {
-                sw.WriteLine($"{todo.Id},{todo.Title},{todo.IsDone}");
-            }
-            sw.Close();
+            string json = JsonConvert.SerializeObject(_todos, Formatting.Indented);
+            File.WriteAllText(_filePath, json);
         }
 
         public List<TodoModel> GetAll()
@@ -94,10 +75,9 @@ namespace TodoApp.Models
                 
             return false;
         }
-
         public string Test()
         {
-            throw new NotImplementedException();
+            return $"{_todos[_todos.Count - 1].Id}, {_todos[_todos.Count - 1].Title}, {_todos[_todos.Count - 1].IsDone}";
         }
     }
 }

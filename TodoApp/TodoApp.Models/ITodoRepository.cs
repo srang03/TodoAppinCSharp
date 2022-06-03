@@ -31,5 +31,7 @@ namespace TodoApp.Models
         T BrowseDetail(int id);
 
         bool UpdateTodo(T model);
+
+        string Test();
     }
 }

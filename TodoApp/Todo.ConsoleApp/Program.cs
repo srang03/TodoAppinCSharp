@@ -41,25 +41,31 @@ public class Program
         //ShowAll(todos);
 
         // [1] 파일 데이터베이스 
-        ITodoRepository<TodoModel> _repository = new TodoRepositoryFile();
+        //ITodoRepository<TodoModel> _repository = new TodoRepositoryFile();
 
-        List<TodoModel> todos = new List<TodoModel>();
+        //List<TodoModel> todos = new List<TodoModel>();
 
-        todos = _repository.GetAll();
-        ShowAll(todos);
+        //todos = _repository.GetAll();
+        //ShowAll(todos);
 
-        _repository.AddTodo(new TodoModel()
-        {
-            Title = "SQL Server2",
-            IsDone = false
-        });
+        //_repository.AddTodo(new TodoModel()
+        //{
+        //    Title = "SQL Server2",
+        //    IsDone = false
+        //});
 
-        ShowAll(todos);
-        _repository.Delete(1);
+        //ShowAll(todos);
+        //_repository.Delete(1);
 
-        ShowAll(todos);
+        //ShowAll(todos);
 
-        _repository.UpdateTodo(new TodoModel() { Id = 3, Title = "Core Core", IsDone = true });
+        //_repository.UpdateTodo(new TodoModel() { Id = 3, Title = "Core Core", IsDone = true });
+        //ShowAll(todos);
+
+        // [3] JSON 파일
+        ITodoRepository<TodoModel> _repository = new TodoRepositoryJSON();
+
+        var todos = _repository.GetAll();
         ShowAll(todos);
     }
 }
