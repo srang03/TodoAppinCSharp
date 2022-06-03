@@ -9,7 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "User Interface", "User Inte
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todo.ConsoleApp", "Todo.ConsoleApp\Todo.ConsoleApp.csproj", "{8F86F8FF-E231-4AA0-9B27-085D293DEA62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todoapp.Forms", "Todoapp.Forms\Todoapp.Forms.csproj", "{C27F252F-F947-434C-BB70-80B162696C4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Todoapp.Forms", "Todoapp.Forms\Todoapp.Forms.csproj", "{C27F252F-F947-434C-BB70-80B162696C4C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{01F9E84B-895A-48F7-BA7D-121D72200266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi", "WebApi\WebApi.csproj", "{3C1F4377-0337-4112-84A9-80478A4506F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TodoApp.Test.ConsoleApp", "TodoApp.Test.ConsoleApp\TodoApp.Test.ConsoleApp.csproj", "{D692EED8-5B15-41A2-A1DC-4C86E71D5369}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,12 +35,22 @@ Global
 		{C27F252F-F947-434C-BB70-80B162696C4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C27F252F-F947-434C-BB70-80B162696C4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C27F252F-F947-434C-BB70-80B162696C4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C1F4377-0337-4112-84A9-80478A4506F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C1F4377-0337-4112-84A9-80478A4506F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C1F4377-0337-4112-84A9-80478A4506F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C1F4377-0337-4112-84A9-80478A4506F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D692EED8-5B15-41A2-A1DC-4C86E71D5369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D692EED8-5B15-41A2-A1DC-4C86E71D5369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D692EED8-5B15-41A2-A1DC-4C86E71D5369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D692EED8-5B15-41A2-A1DC-4C86E71D5369}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8F86F8FF-E231-4AA0-9B27-085D293DEA62} = {8BD370DE-54DC-41EB-9246-6DD547227868}
+		{3C1F4377-0337-4112-84A9-80478A4506F5} = {01F9E84B-895A-48F7-BA7D-121D72200266}
+		{D692EED8-5B15-41A2-A1DC-4C86E71D5369} = {01F9E84B-895A-48F7-BA7D-121D72200266}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B9FD6884-2B3C-4F64-88D4-B4913F637BAC}
