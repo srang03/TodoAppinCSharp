@@ -43,6 +43,7 @@ namespace Todoapp.Forms
 
         private void DisplayData()
         {
+            this.dataGridView1.DataSource = null; // Refresh 초기화
             this.dataGridView1.DataSource = _repository.GetAll();
         }
     }
